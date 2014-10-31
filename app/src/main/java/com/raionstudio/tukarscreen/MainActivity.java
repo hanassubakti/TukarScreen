@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 
 public class MainActivity extends Activity {
@@ -45,12 +44,16 @@ public class MainActivity extends Activity {
 
 
     public void onGetNameClick(View view) {
-        Intent getNameScreenIntent=new Intent(this, SecondScreen.class);
+        //Intent getNameScreenIntent=new Intent(this, SecondScreen.class);
 
         final  int result=1;
 
-        getNameScreenIntent.putExtra("panggilActivity","MainActivity");
-        startActivityForResult(getNameScreenIntent,result);
+        //getNameScreenIntent.putExtra("panggilActivity","MainActivity");
+
+        Human arik=new Human(6.25,186,"Arika");
+        Intent sendArik=new Intent(this,SecondScreen.class);
+        sendArik.putExtra("humanSend",arik);
+        startActivityForResult(sendArik,result);
     }
 
     @Override
